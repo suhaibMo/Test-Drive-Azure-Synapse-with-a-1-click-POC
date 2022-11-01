@@ -16,14 +16,13 @@
 			"conf": {
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
-				"spark.dynamicAllocation.maxExecutors": "2"
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "ba0fdca1-6b21-4a84-9e50-3dfcf3123dce"
 			}
 		},
 		"metadata": {
 			"saveOutput": true,
-			"synapse_widget": {
-				"version": "0.1"
-			},
+			"enableDebugMode": false,
 			"kernelspec": {
 				"name": "synapse_pyspark",
 				"display_name": "Synapse PySpark"
@@ -32,10 +31,10 @@
 				"name": "python"
 			},
 			"a365ComputeOptions": {
-				"id": "/subscriptions/4eeedd72-d937-4243-86d1-c3982a84d924/resourceGroups/nashahzsfin/providers/Microsoft.Synapse/workspaces/mfstspdjvzuh3xeu2pocws1/bigDataPools/ws1sparkpool1",
+				"id": "/subscriptions/687537c9-1139-4975-85ff-c4822c224772/resourceGroups/rg-azure-synapse-testdrive-sumo/providers/Microsoft.Synapse/workspaces/msfthzcwbteyfdup4pocws1/bigDataPools/ws1sparkpool1",
 				"name": "ws1sparkpool1",
 				"type": "Spark",
-				"endpoint": "https://mfstspdjvzuh3xeu2pocws1.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ws1sparkpool1",
+				"endpoint": "https://msfthzcwbteyfdup4pocws1.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ws1sparkpool1",
 				"auth": {
 					"type": "AAD",
 					"authResource": "https://dev.azuresynapse.net"
@@ -286,7 +285,7 @@
 					"datestamp = datetime.now().strftime('%m-%d-%Y-%s');\n",
 					"fileName = \"lrModel_\" + datestamp;\n",
 					"logRegDirfilename = fileName;\n",
-					"lrModel.save(logRegDirfilename)\n",
+					"#lrModel.save(logRegDirfilename)\n",
 					"\n",
 					"## Predict tip 1/0 (yes/no) on the test dataset, evaluation using AUROC\n",
 					"predictions = lrModel.transform(test_data_df)\n",
@@ -318,7 +317,7 @@
 					"plt.ylabel('True Positive Rate')\n",
 					"plt.show()"
 				],
-				"execution_count": null
+				"execution_count": 11
 			}
 		]
 	}
